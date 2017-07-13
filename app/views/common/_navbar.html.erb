@@ -9,14 +9,14 @@
             <ul class="nav navbar-nav navbar-right">
               <% unless current_user %>
                   <li>
-                    <%= link_to new_user_registration_path do %>
+                    <%= link_to new_user_session_path do %>
                       <span>登录</span>
                       <span>相机</span>
                     <% end %>
                   </li>
               <% else %>
                 <li> <%= link_to "发布", '#' %> </li>
-                <li><%= link_to "头像", '#' %></li>
+                <li><%= link_to current_user.email, account_path(current_user) %></li>
               <% end %>
             </ul>
         </div>
