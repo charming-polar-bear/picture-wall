@@ -14,7 +14,11 @@
                     <% end %>
                   </li>
               <% else %>
-                <li> <%= link_to "发布", '#' %> </li>
+                <li>
+                   <%= link_to new_post_path do %>
+                      相机图片
+                   <% end %>
+                 </li>
                 <li><%= link_to current_user.email, user_path(current_user) %></li>
               <% end %>
             </ul>
