@@ -7,7 +7,7 @@
   <li> 如果这是current_user 的主页,则显示编辑按钮 :</li>
   <li>
     <% if current_user && current_user == @user %>
-    <%= link_to edit_account_path(current_user) do %>
+    <%= link_to account_path(current_user) do %>
     <span>修改自己的用户资料</span>
     <% end %>
     <% end %>
