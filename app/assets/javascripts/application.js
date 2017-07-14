@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/alert
+//= require material-kit
+//= require material.min
 //= require_tree .
