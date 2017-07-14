@@ -42,6 +42,5 @@
 
 </div>
 
-<% @posts.each do |p| %>
-  <%= image_tag p.picture %>
-<% end %>
+
+<%= render 'common/picture_wall', posts: @posts %>
