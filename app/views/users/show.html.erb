@@ -1,0 +1,41 @@
+<br><br>
+<ul>
+  <a href="/">小房子图标,去主页</a>
+</ul>
+
+<ul class="pull-right">
+  <li> 如果这是current_user 的主页,则显示编辑按钮 :</li>
+  <li>
+    <% if current_user && current_user == @user %>
+    <%= link_to account_path(current_user) do %>
+    <span>修改自己的用户资料</span>
+    <% end %>
+    <% end %>
+  </li>
+</ul>
+
+<br><hr>
+
+<ul class="text-center">
+  <li> 用户头像 </li>
+  <li> 用户名 </li>
+  <li> 用户签名 </li>
+  <li>用户背景图</li>
+</ul>
+
+<br><hr>
+
+三个关于社区的按钮: 建议废弃
+<ul>
+  <li>新增社区</li>
+  <li>我的社区</li>
+  <li>全社区作品</li>
+</ul>
+
+<br><hr>
+
+<ul>
+  <li>0个喜欢</li>
+  <li>0个评论</li>
+  <li>0个作品</li>
+</ul>
