@@ -1,14 +1,41 @@
-<li>我的社区</li>
-<br><hr>
 
-<ul>
+<!-- <ul>
   <li>头像:</li>
   <li>主页背景:</li>
   <li>名字:</li>
   <li>手机:</li>
   <li>个性签名:</li>
   <li>修改密码:</li>
-</ul>
+</ul> -->
+<% if @user.account_avatar.present? %>
+<li> 用户头像<%= image_tag @user.account_avatar %> </li>
+<% end %>
+<li> 用户名 <%= @user.account_name %> </li>
+<li> 用户签名 <%= @user.signature %> </li>
+<% if @user.account_back_ground.present? %>
+<li>用户背景图 <%= image_tag @user.account_back_ground %></li>
+<% end %>
+
+<%= simple_form_for current_user, url: account_path(current_user) do |f| %>
+  <div class="group">
+    <%= f.input :account_name %>
+  </div>
+
+  <div class="group">
+    <%= f.input :account_avatar, as: :file %>
+  </div>
+
+  <div class="group">
+    <%= f.input :account_back_ground, as: :file %>
+  </div>
+
+  <div class="group">
+    <%= f.input :signature %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+
+<% end %>
 
 <hr><br>
-保存, 取消
+<%= link_to '退出登录', destroy_user_session_path(current_user), method: :delete, class: 'btn btn-danger'%>

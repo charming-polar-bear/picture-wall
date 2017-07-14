@@ -2,7 +2,7 @@
 
 <ul class="pull-right">
     <% if current_user && current_user == @user %>
-    <%= link_to account_path(current_user), class: 'btn btn-info' do %>
+    <%= link_to edit_account_path(current_user), class: 'btn btn-info' do %>
     <i class="fa fa-bars" aria-hidden="true"></i>
     <% end %>
     <% end %>
@@ -12,10 +12,10 @@
 <br><hr>
 
 <ul class="text-center">
-  <li> 用户头像 </li>
-  <li> 用户名 </li>
-  <li> 用户签名 </li>
-  <li>用户背景图</li>
+  <li> 用户头像<%= image_tag @user.account_avatar %> </li>
+  <li> 用户名 <%= @user.account_name %> </li>
+  <li> 用户签名 <%= @user.signature %> </li>
+  <li>用户背景图 <%= image_tag @user.account_back_ground %></li>
 </ul>
 
 <br><hr>
