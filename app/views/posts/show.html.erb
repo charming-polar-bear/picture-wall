@@ -1,14 +1,11 @@
-<%= render 'post_info', post: @post %>
-<%= image_tag @post.picture %><br>
-<%= render 'user_info', user: @post.user %><br>
+<%= render 'info_head' %>
+<%= render 'post_picture' %>
 
-<%# TODO: 图片地点  %>
-<%= render 'post_location' %>
+<%= render 'post_user' %>
 
-<%= render 'like_button', post: @post%>
+<%# TODO:  %>地点
 
-<%= @post.likers.count %> 人喜欢
+xxx 人喜欢
 喜欢的人头像
 
-<hr>
 xxxx 条评论

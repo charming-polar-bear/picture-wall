@@ -9,13 +9,14 @@
               <% unless current_user %>
                   <li>
                     <%= link_to new_user_session_path do %>
-                      <i class="fa fa-camera" aria-hidden="true"></i>
+                      <span>登录</span>
+                      <span>相机</span>
                     <% end %>
                   </li>
               <% else %>
                 <li>
                    <%= link_to new_post_path do %>
-                    <i class="fa fa-camera" aria-hidden="true"></i>
+                      相机图片
                    <% end %>
                  </li>
                 <li><%= link_to current_user.email, user_path(current_user) %></li>
