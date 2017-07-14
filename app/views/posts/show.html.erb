@@ -1,9 +1,10 @@
-<%= render 'info_head' %>
-<%= render 'post_picture' %>
+<%= render 'post_info', post: @post %>
+<%= image_tag @post.picture %><br>
 
-<%= render 'post_user' %>
+<%= render 'user_info_and_like', user: @post.user %><br>
 
-<%# TODO:  %>地点
+<%# TODO: 图片地点  %>
+<%= render 'post_location' %>
 
 xxx 人喜欢
 喜欢的人头像
