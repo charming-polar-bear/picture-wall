@@ -1,19 +1,14 @@
 <br><br>
-<ul>
-  <a href="/" class="btn btn-primary"><i class="fa fa-home" aria-hidden="true"></i></a>
-</ul>
 
 <ul class="pull-right">
-  <li> 如果这是current_user 的主页,则显示编辑按钮 :</li>
-  <li>
     <% if current_user && current_user == @user %>
-    <%= link_to account_path(current_user) do %>
-    <span>修改自己的用户资料</span>
+    <%= link_to account_path(current_user), class: 'btn btn-info' do %>
+    <i class="fa fa-bars" aria-hidden="true"></i>
     <% end %>
     <% end %>
-  </li>
 </ul>
 
+<a href="/" class="btn btn-primary"><i class="fa fa-home" aria-hidden="true"></i></a>
 <br><hr>
 
 <ul class="text-center">
@@ -25,26 +20,28 @@
 
 <br><hr>
 
-三个关于社区的按钮: 建议废弃
+<!-- 三个关于社区的按钮: 建议废弃
 <ul>
   <li>新增社区</li>
   <li>我的社区</li>
   <li>全社区作品</li>
 </ul>
 
-<br><hr>
+<br><hr> -->
 
 <div class="row">
-  <%= link_to '#', class: 'btn btn-default' do %>
+  <%= link_to user_path(@user, category: 'like'), class: 'btn btn-default' do %>
   <li><%= @user.likes.count %>个喜欢 <i class="fa fa-heart"></i></li>
   <% end %>
   <%= link_to '#', class: 'btn btn-default' do %>
     <li>0个评论 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
   <% end %>
-  <%= link_to '#', class: 'btn btn-default' do %>
+  <%= link_to user_path(@user, category: 'publish'), class: 'btn btn-default' do %>
   <li><%= @user.posts.count %>个作品 <i class="fa fa-picture-o" aria-hidden="true"></i></li>
   <% end %>
 
 </div>
 
-</ul>
+<% @posts.each do |p| %>
+  <%= image_tag p.picture %>
+<% end %>
