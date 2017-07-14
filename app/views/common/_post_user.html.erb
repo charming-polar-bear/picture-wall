@@ -8,7 +8,7 @@
 
 <%= link_to user_path(post_user) do %>
     <div class="" style="height:30px;">
-      头像
+      <%= image_tag post_user.account_avatar %>
       <%= post_user.email %>
     </div>
 <% end %>
