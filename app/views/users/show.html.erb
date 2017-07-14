@@ -1,6 +1,6 @@
 <br><br>
 <ul>
-  <a href="/">小房子图标,去主页</a>
+  <a href="/" class="btn btn-primary"><i class="fa fa-home" aria-hidden="true"></i></a>
 </ul>
 
 <ul class="pull-right">
@@ -34,8 +34,17 @@
 
 <br><hr>
 
-<ul>
-  <li>0个喜欢</li>
-  <li>0个评论</li>
-  <li>0个作品</li>
+<div class="row">
+  <%= link_to '#', class: 'btn btn-default' do %>
+  <li><%= @user.likes.count %>个喜欢 <i class="fa fa-heart"></i></li>
+  <% end %>
+  <%= link_to '#', class: 'btn btn-default' do %>
+    <li>0个评论 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
+  <% end %>
+  <%= link_to '#', class: 'btn btn-default' do %>
+  <li><%= @user.posts.count %>个作品 <i class="fa fa-picture-o" aria-hidden="true"></i></li>
+  <% end %>
+
+</div>
+
 </ul>
