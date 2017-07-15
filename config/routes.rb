@@ -16,8 +16,14 @@ Rails.application.routes.draw do
   resources :account
 
   namespace :admin do
-    resources :users
-    resources :posts
+    resources :users do
+      member do
+        post :active
+        post :disactive
+        post :set
+        post :remove
+      end
+    end
   end
 
   root 'posts#index'
