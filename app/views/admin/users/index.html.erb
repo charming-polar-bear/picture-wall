@@ -10,12 +10,16 @@
     </thead>
     <tbody>
       <% @users.each do |u| %>
-        <tr>
-          <td><%= u.account_name %></td>
-          <td><%= image_tag u.account_avatar %></td>
-          <td><%= u.email %></td>
-          <td><%= u.signature %></td>
-        </tr>
+      <tr>
+        <td><%=link_to u.account_name, u %></td>
+        <td>
+          <%= link_to user_path(u) do %>
+          <%= image_tag u.account_avatar %>
+          <% end %>
+        </td>
+        <td><%= u.email %></td>
+        <td><%= u.signature %></td>
+      </tr>
       <% end %>
     </tbody>
   </table>

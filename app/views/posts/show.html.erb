@@ -1,3 +1,10 @@
+<div class="pull-right">
+  <% if post_deletable?(@post, current_user) %>
+  <%= link_to post_path(@post), method: :delete, class:'btn btn-danger', data: {confirm: '确定要删除照片吗?'} do %>
+  <i class="fa fa-trash-o" aria-hidden="true"></i>
+  <% end %>
+  <% end %>
+</div>
 <%= render 'post_info', post: @post %>
 <%= image_tag @post.picture %><br>
 发图人的头像和名称

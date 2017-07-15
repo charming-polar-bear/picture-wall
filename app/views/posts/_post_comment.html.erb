@@ -3,7 +3,9 @@
   <%= comment.user.email %>
   <%= comment.content %>
 
-  <% if current_user && current_user == comment.user %>
-    <%= link_to '删除', post_comment_path(@post, comment), method: :delete %>
+  <% if comment_deletable?(comment, current_user) %>
+    <%= link_to post_comment_path(@post, comment), method: :delete do%>
+    <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <% end %>
   <% end %>
 </li>

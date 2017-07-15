@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
 
-    if current_user == @comment.user
+    if comment_deletable?(@comment, current_user)
       @comment.destroy
       redirect_to :back
     end
