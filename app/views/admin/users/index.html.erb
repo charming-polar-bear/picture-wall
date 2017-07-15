@@ -1,0 +1,61 @@
+<div class="text-center">
+  <% unless current_user.is_actived_admin %>
+        <%= link_to active_admin_user_path(current_user), method: :post, data: {confirm: '确定要激活删帖删评论的权限吗?'},
+            class: 'btn btn-danger' do %>
+        激活管理员权限 <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+        <% end %>
+  <% else %>
+        <%= link_to disactive_admin_user_path(current_user), method: :post,
+            class: 'btn btn-info' do %>
+        锁定管理员权限 <i class="fa fa-lock" aria-hidden="true"></i>
+        <% end %>
+  <% end %>
+</div>
+
+<div class="">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>管理员</th>
+        <th>用户名</th>
+        <th>头像</th>
+        <th>email</th>
+        <th>签名</th>
+        <th>选项</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |u| %>
+      <tr>
+        <td>
+          <% if u.is_admin %>
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <% end %>
+        </td>
+        <td><%=link_to u.account_name, u %></td>
+        <td>
+          <%= link_to user_path(u) do %>
+          <%= image_tag u.account_avatar %>
+          <% end %>
+        </td>
+        <td><%= u.email %></td>
+        <td><%= u.signature %></td>
+        <td>
+          <%# TODO: refactor %>
+          <% unless u.admin? %>
+              <%= link_to set_admin_user_path(u), method: :post,
+                  class: 'btn btn-info', data: {confirm: '将该用户设置成管理员吗?'} do %>
+                  <i class="fa fa-key" aria-hidden="true"></i>
+              <% end %>
+          <% else %>
+              <%= link_to remove_admin_user_path(u), method: :post,
+                  class: 'btn btn-info', data: {confirm: '解除该用户的管理员吗?'} do %>
+                  <i class="fa fa-times" aria-hidden="true"></i>
+              <% end %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

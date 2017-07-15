@@ -31,7 +31,36 @@ class User < ApplicationRecord
   mount_uploader :account_avatar, AccountAvatarUploader
   mount_uploader :account_back_ground, AccountBackGroundUploader
 
-  has_many :likes
   has_many :posts
+
+  has_many :likes
   has_many :liking_posts, through: :likes, source: :post
+
+  has_many :comments
+  has_many :comment_posts, through: :comments, source: :post
+
+  def admin?
+    is_admin
+  end
+
+  def active!
+    self.is_actived_admin = true
+    self.save
+  end
+
+  def disactive!
+    self.is_actived_admin = false
+    self.save
+  end
+
+  def set_admin!
+    self.is_admin = true
+    self.save
+  end
+
+  def remove_admin!
+    self.is_admin = false
+    self.save
+  end
+
 end

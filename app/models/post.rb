@@ -15,6 +15,7 @@ class Post < ApplicationRecord
 
   has_many :likes
   has_many :likers, through: :likes, source: :user
+
   has_many :comments
 
   mount_uploader :picture, PictureUploader

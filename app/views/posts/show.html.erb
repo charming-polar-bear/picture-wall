@@ -1,14 +1,39 @@
+<div class="pull-right">
+  <% if post_deletable?(@post, current_user) %>
+  <%= link_to post_path(@post), method: :delete, class:'btn btn-danger', data: {confirm: '确定要删除照片吗?'} do %>
+  <i class="fa fa-trash-o" aria-hidden="true"></i>
+  <% end %>
+  <% end %>
+</div>
 <%= render 'post_info', post: @post %>
 <%= image_tag @post.picture %><br>
+发图人的头像和名称
 <%= render 'user_info', user: @post.user %><br>
 
 <%# TODO: 图片地点  %>
 <%= render 'post_location' %>
-
+<br>
 <%= render 'like_button', post: @post%>
+<br>
 
 <%= @post.likers.count %> 人喜欢
-喜欢的人头像
+喜欢的人除了自己的头像
+头像 名字     时间
+内容
 
 <hr>
-xxxx 条评论
+
+<i class="fa fa-comment-o" aria-hidden="true"><%= @post.comments.count %>条评论</i>
+<%= simple_form_for @comment, url: post_comments_path(@post), method: :post do |f| %>
+    <div class="group">
+      <%= f.input :content %>
+    </div>
+
+    <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+<% end %>
+
+<div class="">
+  <% @comments.each do |comment| %>
+  <%= render 'post_comment', comment: comment %>
+  <% end %>
+</div>
