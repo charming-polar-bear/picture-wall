@@ -1,7 +1,7 @@
 <br><br>
 
 <ul class="pull-right">
-  <% if current_user && current_user == @user && current_user.is_admin? %>
+  <% if current_user && current_user == @user && current_user.admin? %>
   <%= link_to admin_users_path, class: 'btn btn-default' do %>
   <i class="fa fa-cogs" aria-hidden="true"></i>
   <% end %>

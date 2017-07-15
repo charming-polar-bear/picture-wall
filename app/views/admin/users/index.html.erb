@@ -1,0 +1,22 @@
+<div class="">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>用户名</th>
+        <th>头像</th>
+        <th>email</th>
+        <th>签名</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |u| %>
+        <tr>
+          <td><%= u.account_name %></td>
+          <td><%= image_tag u.account_avatar %></td>
+          <td><%= u.email %></td>
+          <td><%= u.signature %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

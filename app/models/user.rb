@@ -39,7 +39,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :comment_posts, through: :comments, source: :post
 
-  def is_admin?
+  def admin?
     is_admin
   end
 end
