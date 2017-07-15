@@ -8,7 +8,24 @@
 <%= render 'like_button', post: @post%>
 
 <%= @post.likers.count %> 人喜欢
-喜欢的人头像
+喜欢的人除了自己的头像
 
-<hr>
+
 xxxx 条评论
+<hr>
+头像 名字     时间
+内容
+
+<%= simple_form_for @comment, url: post_comments_path(@post), method: :post do |f| %>
+    <div class="group">
+      <%= f.input :content %>
+    </div>
+
+    <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+<% end %>
+
+<div class="">
+  <% @comments.each do |comment| %>
+  <%= render 'post_comment', comment: comment %>
+  <% end %>
+</div>

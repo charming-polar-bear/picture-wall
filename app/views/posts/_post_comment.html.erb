@@ -1,0 +1,9 @@
+
+<li>
+  <%= comment.user.email %>
+  <%= comment.content %>
+
+  <% if current_user && current_user == comment.user %>
+    <%= link_to '删除', post_comment_path(@post, comment), method: :delete %>
+  <% end %>
+</li>
