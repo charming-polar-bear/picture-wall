@@ -31,7 +31,11 @@ class User < ApplicationRecord
   mount_uploader :account_avatar, AccountAvatarUploader
   mount_uploader :account_back_ground, AccountBackGroundUploader
 
-  has_many :likes
   has_many :posts
+
+  has_many :likes
   has_many :liking_posts, through: :likes, source: :post
+
+  has_many :comments
+  has_many :comment_posts, through: :comments, source: :post
 end

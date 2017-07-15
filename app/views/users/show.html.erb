@@ -33,8 +33,8 @@
   <%= link_to user_path(@user, category: 'like'), class: 'btn btn-default' do %>
   <li><%= @user.likes.count %>个喜欢 <i class="fa fa-heart"></i></li>
   <% end %>
-  <%= link_to '#', class: 'btn btn-default' do %>
-    <li>0个评论 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
+  <%= link_to user_path(@user, category: 'comment'), class: 'btn btn-default' do %>
+    <li><%= @user.comments.count %>个评论 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
   <% end %>
   <%= link_to user_path(@user, category: 'publish'), class: 'btn btn-default' do %>
   <li><%= @user.posts.count %>个作品 <i class="fa fa-picture-o" aria-hidden="true"></i></li>

@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     @posts = case params[:category]
               when 'like'
                 @user.liking_posts
-              when 'publish'
-                @user.posts
+              when 'comment'
+                @user.comment_posts
               else
                 @user.posts
               end
