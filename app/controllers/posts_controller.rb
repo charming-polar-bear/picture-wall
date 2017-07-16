@@ -28,12 +28,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if post_deletable?(@post, current_user?)
+    # if post_deletable?(@post, current_user)
       @post.destroy
       redirect_to '/'
-    else
-      render :back
-    end
+    # else
+    #   render :back
+    # end
   end
 
   def current_user_like
