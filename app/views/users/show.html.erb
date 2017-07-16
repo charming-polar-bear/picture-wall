@@ -1,179 +1,93 @@
 
 <!--     *********     HEADER 2      *********      -->
 
-  <div class="header-2">
-      <nav class="navbar navbar-transparent navbar-absolute">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="http://www.creative-tim.com">Creative Tim</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="navigation-example">
-                  <ul class="nav navbar-nav navbar-center">
-                      <li>
-                          <a href="#pablo">
-                              Home
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#pablo">
-                              About Us
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#pablo">
-                              Products
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#pablo">
-                              Contact Us
-                          </a>
-                      </li>
-                  </ul>
-              <ul class="nav navbar-nav navbar-right">
-                  <li>
-                      <a href="https://twitter.com/CreativeTim">
-                <i class="fa fa-twitter"></i>
-              </a>
-                  </li>
-                  <li>
-                      <a href="https://www.facebook.com/CreativeTim">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-                  </li>
-            <li>
-                      <a href="https://www.instagram.com/CreativeTimOfficial">
-                <i class="fa fa-instagram"></i>
-              </a>
-                  </li>
-              </ul>
-            </div>
-        </div>
-      </nav>
-
-
-      <div class="page-header header-filter" style="background-image: url('assets/img/examples/office2.jpg');">
-          <div class="container">
-              <div class="row">
-        <div class="col-md-8 col-md-offset-2 text-center">
-          <h1 class="title"> You should work with us!</h1>
-                    <h4>Now you have no excuses, it's time to surprise your clients, your competitors, and why not, the world. You probably won't have a better chance to show off all your potential if it's not by designing a website for your own agency or web studio.</h4>
-        </div>
-        <div class="col-md-10 col-md-offset-1">
-          <div class="card card-raised card-form-horizontal">
-            <div class="card-content">
-              <form method="" action="">
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                              <input type="text" value="" placeholder="Company Name" class="form-control" />
-                            </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                              <input type="email" value="" placeholder="Company Email" class="form-control" />
-                            </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                              <input type="password" value="" placeholder="Company Password" class="form-control" />
-                            </div>
-                  </div>
-                  <div class="col-md-3">
-                    <button type="button" class="btn btn-primary btn-block">Sign up</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
   <!--     *********    END HEADER 2      *********      -->
 
+  <!--     *********    TEAM 4     *********      -->
+
+  <div class="team-4 section-image" style="background-image: url('https://ws3.sinaimg.cn/large/006tKfTcgy1fgf2rkqgicj30ng0ng0ww.jpg')">
+
+  		<div class="container">
+                <div class="row">
+                  <div class="col-md-8">
+
+
+          <% if current_user && current_user == @user && current_user.admin? %>
+          <%= link_to admin_users_path, class: 'btn btn-default' do %>
+          <i class="fa fa-cogs" aria-hidden="true"></i>
+          <% end %>
+          <% end %>
+
+
+          <% if current_user && current_user == @user %>
+          <%= link_to edit_account_path(current_user), class: 'btn btn-info' do %>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+          <% end %>
+          <% end %>
+
+        </ul>
+
+        <a href="/" class="btn btn-primary"><i class="fa fa-home" aria-hidden="true"></i></a>
+        </div>
+        </div>
 
 
 
+  			<div class="row">
+  				<div class="col-md-8 col-md-offset-2 text-center">
+  					<h2 class="title">美丽宁波</h2>
+  					<h5 class="description">安全出行,传递爱心</h5>
+  				</div>
+  			</div>
+
+  			<div class="row">
+
+  				<div class="col-md-8 col-md-offset-2">
+  					<div class="card card-profile">
+  						<div class="card-avatar">
+  							<a href="#pablo">
+                  <%= image_tag @user.account_avatar %>
+  							</a>
+  						</div>
 
 
+  						<div class="card-content">
+                <h4 class="card-title"><%= @user.account_name %></h4>
+                <h6 class="category text-muted"><%= @user.signature %></h6>
+  							<div class="footer">
+                  <%= link_to user_path(@user, category: 'like'), class: 'btn btn-primary btn-lg' do %>
+                  <li><%= @user.likes.count %>个喜欢 <i class="fa fa-heart"></i></li>
+                  <% end %>
+                  <%= link_to user_path(@user, category: 'comment'), class: 'btn btn-primary btn-lg' do %>
+                    <li><%= @user.comments.count %>个评论 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
+                  <% end %>
+                  <%= link_to user_path(@user, category: 'publish'), class: 'btn btn-primary btn-lg' do %>
+                  <li><%= @user.posts.count %>个作品 <i class="fa fa-picture-o" aria-hidden="true"></i></li>
+                  <% end %>
+
+  								<!-- <a href="#pablo" class="btn btn-just-icon btn-linkedin btn-round"><i class="fa fa-linkedin"></i></a>
+  								<a href="#pablo" class="btn btn-just-icon btn-twitter btn-round"><i class="fa fa-twitter"></i></a>
+  								<a href="#pablo" class="btn btn-just-icon btn-dribbble btn-round"><i class="fa fa-dribbble"></i></a> -->
+  							</div>
+  						</div>
+  					</div>
+  				</div>
 
 
+  			</div>
+
+  		</div>
+  	</div>
+
+  	<!--     *********    END TEAM 4      *********      -->
 
 
-<ul class="pull-right">
-  <% if current_user && current_user == @user && current_user.admin? %>
-  <%= link_to admin_users_path, class: 'btn btn-default' do %>
-  <i class="fa fa-cogs" aria-hidden="true"></i>
-  <% end %>
-  <% end %>
-
-
-  <% if current_user && current_user == @user %>
-  <%= link_to edit_account_path(current_user), class: 'btn btn-info' do %>
-  <i class="fa fa-bars" aria-hidden="true"></i>
-  <% end %>
-  <% end %>
-
-</ul>
-
-<a href="/" class="btn btn-primary"><i class="fa fa-home" aria-hidden="true"></i></a>
-<br><hr>
-
-<ul class="text-center">
-  <div class="card card-profile card-plain">
-	<div class="card-avatar">
-		<a href="#pablo">
-      <%= image_tag @user.account_avatar %>
-		</a>
-	</div>
-
-	<div class="card-content">
-		<h4 class="card-title"><%= @user.account_name %></h4>
-		<h6 class="category text-muted"><%= @user.signature %></h6>
-	</div>
-</div>
-
-
-  <!-- <li>用户背景图 <%= image_tag @user.account_back_ground %></li> -->
-
-
-
-<!-- 三个关于社区的按钮: 建议废弃
-<ul>
-  <li>新增社区</li>
-  <li>我的社区</li>
-  <li>全社区作品</li>
-</ul>
-
-<br><hr> -->
 
 <div class="row">
 
 
+  <%= render 'common/picture_wall', posts: @posts %>
 
 
-  <%= link_to user_path(@user, category: 'like'), class: 'btn btn-primary btn-lg' do %>
-  <li><%= @user.likes.count %>个喜欢 <i class="fa fa-heart"></i></li>
-  <% end %>
-  <%= link_to user_path(@user, category: 'comment'), class: 'btn btn-primary btn-lg' do %>
-    <li><%= @user.comments.count %>个评论 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
-  <% end %>
-  <%= link_to user_path(@user, category: 'publish'), class: 'btn btn-primary btn-lg' do %>
-  <li><%= @user.posts.count %>个作品 <i class="fa fa-picture-o" aria-hidden="true"></i></li>
-  <% end %>
 
 </div>
-
-
-<%= render 'common/picture_wall', posts: @posts %>
