@@ -6,9 +6,26 @@
 喜欢
 评论 -->
 
-<%= link_to user_path(post_user) do %>
-    <div class="" style="height:30px;">
-      <%= image_tag post_user.account_avatar %>
-      <%= post_user.email %>
+
+<p class="card-description">
+  <!-- Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye... -->
+</p>
+<div class="footer">
+        <div class="author">
+
+          <%= link_to user_path(post_user) do %>
+          <div>
+            <%= image_tag post_user.account_avatar, class: 'avatar img-raised' %>
+            <span> <%= post_user.email %> </span>
+          </div>
+          <% end %>
+            <!-- <a href="#pablo">
+               <img src="assets/img/faces/camp.jpg" alt="..." class="avatar img-raised">
+               <span>Lora Camp</span>
+            </a> -->
+        </div>
+       <div class="stats">
+     <i class="material-icons">favorite</i> <%= post.likers.count  %> &middot;
+     <i class="material-icons">chat_bubble</i> <%= post.comments.count %>
+        </div>
     </div>
-<% end %>
