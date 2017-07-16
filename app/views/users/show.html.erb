@@ -1,4 +1,115 @@
-<br><br>
+
+<!--     *********     HEADER 2      *********      -->
+
+  <div class="header-2">
+      <nav class="navbar navbar-transparent navbar-absolute">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="http://www.creative-tim.com">Creative Tim</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navigation-example">
+                  <ul class="nav navbar-nav navbar-center">
+                      <li>
+                          <a href="#pablo">
+                              Home
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#pablo">
+                              About Us
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#pablo">
+                              Products
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#pablo">
+                              Contact Us
+                          </a>
+                      </li>
+                  </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li>
+                      <a href="https://twitter.com/CreativeTim">
+                <i class="fa fa-twitter"></i>
+              </a>
+                  </li>
+                  <li>
+                      <a href="https://www.facebook.com/CreativeTim">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+                  </li>
+            <li>
+                      <a href="https://www.instagram.com/CreativeTimOfficial">
+                <i class="fa fa-instagram"></i>
+              </a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+
+
+      <div class="page-header header-filter" style="background-image: url('assets/img/examples/office2.jpg');">
+          <div class="container">
+              <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <h1 class="title"> You should work with us!</h1>
+                    <h4>Now you have no excuses, it's time to surprise your clients, your competitors, and why not, the world. You probably won't have a better chance to show off all your potential if it's not by designing a website for your own agency or web studio.</h4>
+        </div>
+        <div class="col-md-10 col-md-offset-1">
+          <div class="card card-raised card-form-horizontal">
+            <div class="card-content">
+              <form method="" action="">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                              <input type="text" value="" placeholder="Company Name" class="form-control" />
+                            </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                              <input type="email" value="" placeholder="Company Email" class="form-control" />
+                            </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                              <input type="password" value="" placeholder="Company Password" class="form-control" />
+                            </div>
+                  </div>
+                  <div class="col-md-3">
+                    <button type="button" class="btn btn-primary btn-block">Sign up</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!--     *********    END HEADER 2      *********      -->
+
+
+
+
+
+
+
+
+
 
 <ul class="pull-right">
   <% if current_user && current_user == @user && current_user.admin? %>
@@ -20,13 +131,23 @@
 <br><hr>
 
 <ul class="text-center">
-  <li> 用户头像<%= image_tag @user.account_avatar %> </li>
-  <li> 用户名 <%= @user.account_name %> </li>
-  <li> 用户签名 <%= @user.signature %> </li>
-  <li>用户背景图 <%= image_tag @user.account_back_ground %></li>
-</ul>
+  <div class="card card-profile card-plain">
+	<div class="card-avatar">
+		<a href="#pablo">
+      <%= image_tag @user.account_avatar %>
+		</a>
+	</div>
 
-<br><hr>
+	<div class="card-content">
+		<h4 class="card-title"><%= @user.account_name %></h4>
+		<h6 class="category text-muted"><%= @user.signature %></h6>
+	</div>
+</div>
+
+
+  <!-- <li>用户背景图 <%= image_tag @user.account_back_ground %></li> -->
+
+
 
 <!-- 三个关于社区的按钮: 建议废弃
 <ul>
@@ -38,13 +159,17 @@
 <br><hr> -->
 
 <div class="row">
-  <%= link_to user_path(@user, category: 'like'), class: 'btn btn-default' do %>
+
+
+
+
+  <%= link_to user_path(@user, category: 'like'), class: 'btn btn-primary btn-lg' do %>
   <li><%= @user.likes.count %>个喜欢 <i class="fa fa-heart"></i></li>
   <% end %>
-  <%= link_to user_path(@user, category: 'comment'), class: 'btn btn-default' do %>
+  <%= link_to user_path(@user, category: 'comment'), class: 'btn btn-primary btn-lg' do %>
     <li><%= @user.comments.count %>个评论 <i class="fa fa-comment-o" aria-hidden="true"></i></li>
   <% end %>
-  <%= link_to user_path(@user, category: 'publish'), class: 'btn btn-default' do %>
+  <%= link_to user_path(@user, category: 'publish'), class: 'btn btn-primary btn-lg' do %>
   <li><%= @user.posts.count %>个作品 <i class="fa fa-picture-o" aria-hidden="true"></i></li>
   <% end %>
 
