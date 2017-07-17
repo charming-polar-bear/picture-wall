@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :like_by_current_user, :dislike_by_current_user]
+  before_action :authenticate_user!, only: [:new, :create, :current_user_like, :current_user_dislike]
   before_action :get_post, only: [:show, :destroy, :current_user_like, :current_user_dislike]
 
   def index
