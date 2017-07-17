@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
 
-    if comment_deletable?(@comment, current_user)
+    if current_user == @comment.user || current_user == @comment.post.user || current_user.is_actived_admin
       @comment.destroy
       redirect_to :back
     end
