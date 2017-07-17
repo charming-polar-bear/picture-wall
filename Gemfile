@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
+gem 'material_icons', '~> 2.0'
 gem 'devise'
 
 gem 'carrierwave'
@@ -39,6 +40,7 @@ gem 'mini_magick'
 gem 'annotate'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
