@@ -39,6 +39,7 @@ gem 'mini_magick'
 gem 'annotate'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

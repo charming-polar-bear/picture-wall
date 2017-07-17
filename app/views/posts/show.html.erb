@@ -23,9 +23,16 @@
 
 <%= render 'like_button', post: @post%>
 <br>
+<div class="row">
+  <%= @post.likers.count %> 人喜欢
 
-<%= @post.likers.count %> 人喜欢
+    <% if post_deletable?(@post, current_user) %>
+    <%= link_to post_path(@post), method: :delete, class:'btn btn-danger btn-xs' do %>
+    <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <% end %>
+    <% end %>
 
+</div>
 <hr>
 
 <i class="fa fa-comment-o" aria-hidden="true"><%= @post.comments.count %>条评论</i>
