@@ -24,16 +24,15 @@ class PostsController < ApplicationController
   def show
     @comments = @post.comments
     @comment = Comment.new
-
   end
 
   def destroy
-    # if post_deletable?(@post, current_user)
+    if current_user == @post.user || current_user.is_actived_admin
       @post.destroy
       redirect_to '/'
-    # else
-    #   render :back
-    # end
+    else
+       render :back
+    end
   end
 
   def current_user_like
