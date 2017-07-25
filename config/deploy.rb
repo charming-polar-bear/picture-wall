@@ -34,7 +34,7 @@
 
 
 
-lock "3.7.2"
+lock "3.7.1"
 set :application, "picture-wall"
 set :repo_url, "git@github.com:charming-polar-bear/picture-wall.git"
 set :deploy_to, "/home/apps/picture-wall"
