@@ -44,6 +44,8 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'faker'
 
+gem 'figaro'
+
 # gem 'cancancan'
 
 # Use Capistrano for deployment
