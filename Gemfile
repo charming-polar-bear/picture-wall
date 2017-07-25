@@ -36,11 +36,15 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
 
 gem 'annotate'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'faker'
+
+gem 'figaro'
 
 # gem 'cancancan'
 
