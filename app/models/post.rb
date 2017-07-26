@@ -31,5 +31,5 @@ class Post < ApplicationRecord
   def dislike_by!(user)
     likers.delete(user)
   end
-  
+
 end
