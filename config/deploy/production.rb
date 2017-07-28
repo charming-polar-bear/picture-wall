@@ -61,6 +61,6 @@
 #   }
 
 
-server "116.62.130.37", user: "apps", roles: %w{app db web}, my_property:
+server "ubuntu-aliyun01", user: "apps", roles: %w{app db web}, my_property:
 :my_value
 set :branch, 'deploy-homer-wechat-omniauth'
