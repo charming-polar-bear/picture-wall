@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'material_icons', '~> 2.0'
 gem 'devise'
+gem 'omniauth-wechat-oauth2'
 
 gem 'carrierwave'
 gem 'mini_magick'

@@ -72,6 +72,7 @@
               <div class="footer text-center">
                 <%= f.submit "登  录", data: { disable_with: "登录中..." }, class: "btn btn-round btn-info"%>
                 <%= link_to '新用户', new_user_registration_path, class: 'btn btn-round btn-default' %>
+                <%= link_to '微信登录', user_wechat_omniauth_callback_path, class: 'btn btn-round btn-default' %>
               </div>
 
             <% end %>
