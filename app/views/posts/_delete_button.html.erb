@@ -1,0 +1,5 @@
+<% if post_deletable?(post, current_user) %>
+<%= link_to post_path(post), method: :delete, class:'btn btn-danger btn-xs pull-right', data: {confirm: '真的要删除图片及评论吗? 删除不可恢复'} do %>
+<i class="fa fa-trash-o" aria-hidden="true"></i>
+<% end %>
+<% end %>

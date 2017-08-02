@@ -1,4 +1,3 @@
-
   <div class="card card-blog card-atv">
   	<div class="card-image">
   		<a href="#pablo">
@@ -18,78 +17,27 @@
           <% end %>
   			</div>
 
-
-        <!-- 样式一 -->
-        <a href="#pablo" class="btn btn-primary btn-simple pull-right" rel="tooltip" title="Reply to Comment">
-          <i class="material-icons">reply</i> 评论
+        <a class="btn btn-primary btn-simple pull-right" rel="tooltip" title="Reply to Comment">
+          <i class="material-icons">chat_bubble</i> <%= @post.comments.count %>
         </a>
-        <a href="#pablo" class="btn btn-danger btn-simple pull-right">
-          <i class="material-icons">favorite</i> <%= @post.likers.count %>
-        </a>
-        <!-- 样式一end -->
 
-
-        <!-- 样式二 -->
-        <!-- <div class="stats">
-			   <i class="material-icons">favorite</i> 142 &middot;
-			   <i class="material-icons">chat_bubble</i> 45
-            </div> -->
-            <!-- 样式儿end -->
-
+        <%= render 'like_button', post: @post%>
 
   		</div>
   	</div>
   </div>
 
-<%= render 'like_button', post: @post%>
-<br>
-<div class="row">
-  <%= @post.likers.count %> 人喜欢
 
-    <% if post_deletable?(@post, current_user) %>
-    <%= link_to post_path(@post), method: :delete, class:'btn btn-danger btn-xs' do %>
-    <i class="fa fa-trash-o" aria-hidden="true"></i>
+
+
+
+  <%= render 'delete_button', post: @post %>
+  <hr>
+
+  <%= render 'comment_input_area', comment: @comment, post: @post %>
+
+  <div class="row">
+    <% @comments.each do |comment| %>
+    <%= render 'post_comment', comment: comment %>
     <% end %>
-    <% end %>
-
-</div>
-<hr>
-
-
-<!-- 样式一 -->
-<i class="material-icons">chat_bubble</i>
-<%= @post.comments.count %> 条评论
-<!-- 样式一end -->
-
-
-<i class="fa fa-comment-o" aria-hidden="true"><%= @post.comments.count %>条评论</i>
-<%= simple_form_for @comment, url: post_comments_path(@post), method: :post do |f| %>
-    <div class="group">
-      <%= f.input :content %>
-    </div>
-
-    <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
-<% end %>
-
-<div class="row">
-  <% @comments.each do |comment| %>
-  <%= render 'post_comment', comment: comment %>
-  <% end %>
-</div>
-
-
-<div class="media media-post">
-  <a class="pull-left author" href="#pablo">
-    <div class="avatar">
-      <img class="media-object" alt="64x64" src="https://ws1.sinaimg.cn/large/006tKfTcgy1fgf2ju01e3j30u00u0n5c.jpg">
-    </div>
-  </a>
-  <div class="media-body">
-      <textarea class="form-control" placeholder="请输入回复内容..." rows="4"></textarea>
-      <div class="media-footer">
-        <a href="#pablo" class="btn btn-primary pull-right">
-          <i class="material-icons">reply</i> 评论
-        </a>
-      </div>
   </div>
-</div>

@@ -1,9 +1,9 @@
 <% if current_user && post.is_liked_by?(current_user) %>
-      <%= link_to current_user_dislike_post_path(post), method: :post, class: 'btn btn-default', data: {confirm: '你确定要取消收藏么?'} do %>
-           <i class="fa fa-heart"></i>
+      <%= link_to current_user_dislike_post_path(post), method: :post, class: 'btn btn-danger btn-simple pull-right', data: {confirm: '你确定要取消收藏么?'} do %>
+      <i class="material-icons">favorite</i> <%= @post.likers.count %>
       <% end %>
 <% else %>
-      <%= link_to current_user_like_post_path(post), method: :post, class: 'btn btn-default' do%>
-          <i class="fa fa-heart-o"></i>
+      <%= link_to current_user_like_post_path(post), method: :post, class: 'btn btn-danger btn-simple pull-right' do%>
+      <i class="material-icons">favorite</i> <%= @post.likers.count %>
       <% end %>
 <% end %>
