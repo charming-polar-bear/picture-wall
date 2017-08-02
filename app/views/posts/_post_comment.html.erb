@@ -1,11 +1,35 @@
 
-<li>
-  <%= comment.user.email %>
-  <%= comment.content %>
+<div>
+  <!-- <%= comment.user.email %>
+  <%= comment.content %> -->
+
+  <div class="media">
+		        						  <a class="pull-left" href="#pablo">
+
+		        							  <div class="avatar">
+
+		        									<img class="media-object" alt="64x64" src="https://ws1.sinaimg.cn/large/006tKfTcgy1fgf2ju01e3j30u00u0n5c.jpg">
+		        							  </div>
+		        						  </a>
+		        						  <div class="media-body">
+		        								<h4 class="media-heading"><%= comment.user.email %> <small>&middot; 2 Days Ago</small></h4>
+
+		        								<p><%= comment.content %></p>
+
+		        								<!-- <div class="media-footer">
+		        									<a href="#pablo" class="btn btn-primary btn-simple pull-right" rel="tooltip" title="Reply to Comment">
+		        										<i class="material-icons">reply</i> Reply
+		        									</a>
+		        									<a href="#pablo" class="btn btn-danger btn-simple pull-right">
+		        										<i class="material-icons">favorite</i> 243
+		        									</a>
+		        								</div> -->
+		        						  </div>
+		        					</div>
 
   <% if comment_deletable?(comment, current_user) %>
     <%= link_to post_comment_path(@post, comment), method: :delete do%>
     <i class="fa fa-trash-o" aria-hidden="true"></i>
     <% end %>
   <% end %>
-</li>
+</div>
