@@ -66,6 +66,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem "capistrano", "~> 3.4"
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
   gem "capistrano-rvm"
   gem "capistrano-rails"
 end
