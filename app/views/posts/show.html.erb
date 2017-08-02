@@ -29,14 +29,13 @@
 
 
 
-
-
   <%= render 'delete_button', post: @post %>
+
   <hr>
 
   <%= render 'comment_input_area', comment: @comment, post: @post %>
 
-  <div class="row">
+  <div class="container">
     <% @comments.each do |comment| %>
     <%= render 'post_comment', comment: comment %>
     <% end %>
