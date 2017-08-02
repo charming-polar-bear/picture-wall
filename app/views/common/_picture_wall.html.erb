@@ -1,49 +1,37 @@
-<<<<<<< HEAD
-
-
-
-<% @posts.each do |p|  %>
-=======
 <div class="masonry-container">
->>>>>>> 04f76582e3fe00fd064b28f018572f16e8252903
 
 <% @posts.each do |p|  %>
   <%= link_to p do %>
-<<<<<<< HEAD
-  
-  <div class="col-md-6 col-lg-4">
-=======
   <div class="masonry-block">
->>>>>>> 04f76582e3fe00fd064b28f018572f16e8252903
     <div class="card card-blog card-rotate">
-    	<div class="rotating-card-container">
-    		<div class="card-image">
-    			<div class="front">
+     <div class="rotating-card-container">
+      <div class="card-image">
+       <div class="front">
             <%= image_tag p.picture %>
-    			</div>
+       </div>
 
-    			<div class="back back-background">
-    				<div class="card-content">
-    					<h5 class="card-title">
-    						Share this article...
-    					</h5>
-    					<p class="card-description">
-    						You can share this article with your friends, family or on different networks...
-    					</p>
-    					<div class="footer text-center">
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
+       <div class="back back-background">
+        <div class="card-content">
+         <h5 class="card-title">
+          Share this article...
+         </h5>
+         <p class="card-description">
+          You can share this article with your friends, family or on different networks...
+         </p >
+         <div class="footer text-center">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
       <% end %>
 
-    	<div class="card-content">
+     <div class="card-content">
         <%= p.description %>
-    		<h4 class="card-title">
-    		</h4>
+      <h4 class="card-title">
+      </h4>
         <%= render 'common/post_user', post_user: p.user, post: p %>
-    	</div>
+     </div>
     </div>
   </div>
 <% end %>
