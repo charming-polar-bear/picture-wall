@@ -1,4 +1,4 @@
-<h2> 上传图片 </h2>
+<h2> 发布作品 </h2>
 
 <%= simple_form_for @post do |f| %>
 
@@ -13,3 +13,22 @@
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 
 <% end %>
+
+
+<div class="fileinput fileinput-new text-center" data-provides="fileinput">
+   <div class="fileinput-new thumbnail img-raised">
+	<!-- <img src="assets/img/image_placeholder.jpg" alt="..."> -->
+  <img src="https://ws3.sinaimg.cn/large/006tNc79gy1fi7m092u9qj30m80gogmj.jpg" alt="...">
+   </div>
+   <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+   <div>
+	<span class="btn btn-raised btn-round btn-default btn-file">
+	   <span class="fileinput-new">请选择作品</span>
+	   <span class="fileinput-exists">更改</span>
+	   <input type="file" name="..." />
+	</span>
+        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput">
+        <i class="fa fa-times"></i> 清空</a>
+   </div>
+</div>
+<textarea class="form-control" placeholder="请输入作品描述" rows="5"></textarea>
