@@ -5,7 +5,7 @@
     </div>
     <% end %>
 	  <div class="media-body">
-			<h4 class="media-heading"><%= comment.user.email %> <small>&middot; <%= comment.created_at %></small></h4>
+			<h4 class="media-heading"><%= comment.user.email %> <small>&middot; <%= time_ago_in_words(comment.created_at) %></small></h4>
 			<p><%= comment.content %></p>
 	  </div>
     <div class="media-footer pull-right" style="margin-right: 20px">

@@ -7,4 +7,5 @@ module CommentsHelper
       user == comment.user || user == comment.post.user || user.is_actived_admin
     end
   end
+
 end
