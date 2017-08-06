@@ -1,18 +1,28 @@
 <div class="media media-post">
-  <div class="pull-left author">
-    <%= image_tag current_user.account_avatar, class:'avatar', alt:"#{current_user.account_name}" %>
-  </div>
+  <% if current_user.present? %>
+    <div class="pull-left author">
+      <%= image_tag current_user.account_avatar, class:'avatar', alt:"#{current_user.account_name}" %>
+    </div>
+  <% end %>
 
-  <%= simple_form_for comment, url: post_comments_path(post), method: :post do |f| %>
-  <div class="media-body">
-    <div class="group">
-      <%= f.text_area :content, :value => "", :placeholder => "请输入回复内容...", class: 'form-control', rows: "4" %>
+    <%= simple_form_for comment, url: post_comments_path(post), method: :post do |f| %>
+    <div class="media-body">
+      <div class="group">
+        <%= f.text_area :content, :value => "", :placeholder => "请输入回复内容...", class: 'form-control', rows: "4" %>
+      </div>
+      <div class="media-footer">
+          <% if current_user.present? %>
+            <%= button_tag type: 'submit', class: "btn btn-primary pull-right" do %>
+            <i class="material-icons">reply</i> 评论
+            <% end %>
+          <% else %>
+            <%= link_to new_user_registration_path, class: "btn btn-primary pull-right" do %>
+            <i class="material-icons">reply</i> 评论
+            <% end %>
+          <% end %>
+      </div>
     </div>
-    <div class="media-footer">
-      <%= button_tag type: 'submit', class: "btn btn-primary pull-right" do %>
-      <i class="material-icons">reply</i> 评论
-      <% end %>
-    </div>
-  </div>
     <% end %>
+
+
 </div>
