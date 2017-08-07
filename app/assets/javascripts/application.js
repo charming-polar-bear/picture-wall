@@ -10,10 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require atv-img-animation
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/alert
 //= require material-kit
 //= require material.min
+//= require bootstrap-datetimepicker
+//= require bootstrap-selectpicker
+//= require bootstrap.min
+//= require jasny-bootstrap.min
+//= require jquery.flexisel
+//= require jquery.min
+//= require moment.min
+//= nouislider.min
 //= require_tree .
