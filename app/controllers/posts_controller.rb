@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.user = current_user
 
+    # flash[:notice] = '66666'
     if @post.save
       redirect_to '/'
     else

@@ -1,32 +1,21 @@
 <h2> 发布作品 </h2>
 
-<%= simple_form_for @post do |f| %>
+<form novalidate="novalidate" class="simple_form new_post" id="new_post" enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Lvxr5HOfk9ivGWKXeLAguGFfR6N60RfcNQu98IMXzzl1RLVbuUx6ZWrznAEe12C+yBEThwl6nn5g3DaMiqwwJA==">
+  <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+     <div class="fileinput-new thumbnail img-raised btn-file">
+      <img src="https://ws3.sinaimg.cn/large/006tNc79gy1fi7m092u9qj30m80gogmj.jpg" alt="...">
+     </div>
+     <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
 
-  <div class="group">
-    <%= f.input :picture, as: :file %>
+     <div>
+     <textarea class="form-control" placeholder="请输入作品描述" rows="2" name="post[description]"></textarea>
+  	<span class="btn btn-raised btn-round btn-default btn-file">
+  	   <span class="fileinput-new">请选择作品</span>
+  	   <span class="fileinput-exists">更改</span>
+  	   <input type="file" name='post[picture]'/>
+  	</span>
+          <!-- <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"> 提交</a> -->
+    <input type="submit" name="commit" value="提交" data-disable-with="Submitting..." class="btn btn-danger btn-round fileinput-exists">
+     </div>
   </div>
-
-  <div class="group">
-    <%= f.input :description %>
-  </div>
-
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
-
-<% end %>
-
-<div class="fileinput fileinput-new text-center" data-provides="fileinput">
-   <div class="fileinput-new thumbnail img-raised">
-  <img src="https://ws3.sinaimg.cn/large/006tNc79gy1fi7m092u9qj30m80gogmj.jpg" alt="...">
-   </div>
-   <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
-   <div>
-	<span class="btn btn-raised btn-round btn-default btn-file">
-	   <span class="fileinput-new">请选择作品</span> -->
-	   <span class="fileinput-exists">更改</span>
-	   <input type="file" name="..." />
-	</span>
-        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput">
-        <i class="fa fa-times"></i> 清空</a>
-   </div>
-</div>
-<textarea class="form-control" placeholder="请输入作品描述" rows="5"></textarea>
+</form>

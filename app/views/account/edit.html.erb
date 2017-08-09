@@ -10,11 +10,8 @@
 <!--     *********    TEAM 4     *********      -->
 
 <div class="team-4 section-image" style="background-image: url('https://ws3.sinaimg.cn/large/006tKfTcgy1fgf2rkqgicj30ng0ng0ww.jpg')">
-
     <div class="container">
-
       <div class="row">
-
         <div class="col-md-8 col-md-offset-2">
           <div class="card card-profile">
             <div class="card-avatar">
@@ -22,57 +19,45 @@
                 <%= image_tag @user.account_avatar %>
               </a>
             </div>
-
-
             <div class="card-content">
               <h4 class="card-title"><%= @user.account_name %></h4>
               <h6 class="category text-muted"><%= @user.signature %></h6>
             </div>
           </div>
         </div>
-
-
       </div>
-
     </div>
   </div>
 
   <!--     *********    END TEAM 4      *********      -->
 
-  <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-      <div class="fileinput-new thumbnail img-circle img-raised">
-  	<img src="https://ws1.sinaimg.cn/large/006tNc79gy1fi7mkkxvjfj305k05kjrl.jpg" alt="...">
-      </div>
-      <div class="fileinput-preview fileinput-exists thumbnail img-circle img-raised"></div>
-      <div>
-      <span class="btn btn-raised btn-round btn-default btn-file">
-          <span class="fileinput-new">Add Photo</span>
-  	<span class="fileinput-exists">Change</span>
-  	<input type="file" name="..." /></span>
-          <br />
-          <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-      </div>
-  </div>
 <%= simple_form_for current_user, url: account_path(current_user) do |f| %>
   <div class="group">
     <%= f.input :account_name %>
   </div>
 
   <div class="group">
-    <%= f.input :account_avatar, as: :file %>
-  </div>
-
-  <!-- <div class="group">
-    <%= f.input :account_back_ground, as: :file %>
-  </div> -->
-
-  <div class="group">
     <%= f.input :signature %>
   </div>
 
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+  <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+    <div class="fileinput-new thumbnail img-circle img-raised">
+      <img src="https://ws1.sinaimg.cn/large/006tNc79gy1fi7mkkxvjfj305k05kjrl.jpg" alt="...">
+    </div>
+    <div class="fileinput-preview fileinput-exists thumbnail img-circle img-raised"></div>
+    <div>
+      <span class="btn btn-raised btn-round btn-default btn-file">
+        <span class="fileinput-new">Add Photo</span>
+        <span class="fileinput-exists">Change</span>
+        <input type="file" name="..." /></span>
+        <br />
+        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+      </div>
+    </div>
 
 <% end %>
 
 <hr><br>
-<%= link_to '退出登录', destroy_user_session_path, method: :delete, class: 'btn btn-danger'%>
+<%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-info pull-right btn-sm' do%>
+  <i class="fa fa-sign-out">退出登录</i>
+<% end %>
