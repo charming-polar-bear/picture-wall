@@ -1,6 +1,6 @@
 <h2> 发布作品 </h2>
 
-<form novalidate="novalidate" class="simple_form new_post" id="new_post" enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Lvxr5HOfk9ivGWKXeLAguGFfR6N60RfcNQu98IMXzzl1RLVbuUx6ZWrznAEe12C+yBEThwl6nn5g3DaMiqwwJA==">
+<form novalidate="novalidate" class="simple_form new_post" id="new_post" enctype="multipart/form-data" action="/posts" accept-charset="UTF-8" method="post"> <input name="utf8" type="hidden" value="✓"> <input type="hidden" name="authenticity_token" value="Lvxr5HOfk9ivGWKXeLAguGFfR6N60RfcNQu98IMXzzl1RLVbuUx6ZWrznAEe12C+yBEThwl6nn5g3DaMiqwwJA==">
   <div class="fileinput fileinput-new text-center" data-provides="fileinput">
      <div class="fileinput-new thumbnail img-raised btn-file">
       <img src="https://ws3.sinaimg.cn/large/006tNc79gy1fi7m092u9qj30m80gogmj.jpg" alt="...">
@@ -14,8 +14,10 @@
   	   <span class="fileinput-exists">更改</span>
   	   <input type="file" name='post[picture]'/>
   	</span>
-          <!-- <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"> 提交</a> -->
-    <input type="submit" name="commit" value="提交" data-disable-with="Submitting..." class="btn btn-danger btn-round fileinput-exists">
+    <button type="submit" name="commit" data-disable-with="Submitting..." class="btn btn-danger btn-round fileinput-exists">
+      <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i>   -->
+       提交
+    </button>
      </div>
   </div>
 </form>
