@@ -14,11 +14,11 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.user = current_user
 
-    # flash[:notice] = '66666'
     if @post.save
       redirect_to '/'
     else
       render :new
+      flash[:warning] = '只能上传jpeg, jpg, png的图片'
     end
   end
 
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to '/'
     else
-       render :back
+       render :back, notice: '你没有删除的权限哦'
     end
   end
 
