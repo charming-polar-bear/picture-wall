@@ -18,6 +18,7 @@ class PostsController < ApplicationController
       redirect_to '/'
     else
       render :new
+      flash[:warning] = '只能上传jpeg, jpg, png的图片'
     end
   end
 
@@ -31,7 +32,7 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to '/'
     else
-       render :back
+       render :back, notice: '你没有删除的权限哦'
     end
   end
 
