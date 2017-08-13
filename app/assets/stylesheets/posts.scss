@@ -1,3 +1,22 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.fileinput .thumbnail {
+  display: inline-block;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 800px;
+  min-width: 500px;
+}
+
+.form-group{
+  label.control-label{
+    padding: 15px 50px;
+    background: #999999;
+    box-shadow: 0 2px 4px 0 rgba(175,175,175,0.50);
+    border-radius: 100px;
+    color: #fff !important;
+  }
+}

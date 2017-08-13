@@ -18,69 +18,74 @@
     </div>
   </div>
 
+
+<div class=" col-sm-12 col-md-12 col-lg-12">
   <%= simple_form_for current_user, url: account_path(current_user) do |f| %>
-  <div class="group">
-    <%= f.input :account_avatar, as: :file %>
-  </div>
-
-  <div class="group">
-    <%= f.input :account_name %>
-  </div>
-
-  <div class="group">
-    <%= f.input :signature %>
-  </div>
-
-  <button type="submit" name="commit" value="Submit" disable_with="Submiting..." data-disable-with="Submit" class='btn btn-danger btn-round fileinput-exists'>
-    <i class="fa fa-paper-plane"></i> 修改
-  </button>
-<% end %>
-
-  <!-- <form novalidate="novalidate" class="simple_form edit_user" action="/account/update" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="JV8RKT+4S8mtq7cqZ803JbGh0Qz8Wh1L53+UpAe1mi920IeVp0Ag76XypbPf9Adkq+U+T6jSd5Rb7gCXwo5jtA==">
     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-
-      <div class="fileinput-new thumbnail img-circle img-raised">
+      <div class="fileinput-new img-raised">
         <% if current_user.account_avatar.present? %>
         <%= image_tag current_user.account_avatar%>
         <% else %>
         <img src="https://ws1.sinaimg.cn/large/006tNc79gy1fi7mkkxvjfj305k05kjrl.jpg" alt="...">
         <% end %>
       </div>
-      <div class="fileinput-preview fileinput-exists thumbnail img-circle img-raised"></div>
+      <div class="fileinput-preview fileinput-exists img-raised"></div>
       <div>
-        <span class="btn btn-raised btn-round btn-default btn-file">
-          <span class="fileinput-new">添加图片</span>
-          <span class="fileinput-exists">更改</span>
-          <input type="file" name="user[account_avatar]"></span>
-          <br>
-        </div>
+        <%= f.input :account_avatar, as: :file, label: '上传头像' %>
       </div>
 
-    <div class="group">
-      <div class="form-group string optional user_account_name">
-        <label class="control-label string optional" for="user_account_name">用户名</label>
-        <textarea class="form-control string optional" type="text" name="user[account_name]" id="user_account_name"><%= current_user.account_name %></textarea>
+    <%= f.input :account_name, label: false, placeholder: "我的昵称", style: 'margin-top: 5px;' %>
+    <%= f.input :signature, label: false, placeholder: "我的个性签名", style: 'margin-top: 5px;' %>
+
+    <button type="submit" name="commit" value="Submit" disable_with="Submiting..." data-disable-with="Submit" class='btn btn-danger btn-round'>
+      <i class="fa fa-paper-plane"></i> 修改
+    </button>
+  <% end %>
+
+</div>
+
+
+  <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-info btn-sm pull-right' do%>
+    <i class="fa fa-sign-out"></i>  退出登录
+  <% end %>
+
+
+
+
+
+  <!-- <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+    <div class="fileinput-new img-circle img-raised">
+      <% if current_user.account_avatar.present? %>
+      <%= image_tag current_user.account_avatar%>
+      <% else %>
+      <img src="https://ws1.sinaimg.cn/large/006tNc79gy1fi7mkkxvjfj305k05kjrl.jpg" alt="...">
+      <% end %>
+    </div>
+    <div class="fileinput-preview fileinput-exists thumbnail img-circle img-raised"></div>
+    <div>
+      <span class="btn btn-raised btn-round btn-default btn-file">
+        <span class="fileinput-new">添加图片</span>
+        <span class="fileinput-exists">更改</span>
+        <input type="file" name="..."></span>
+        <br>
       </div>
     </div>
 
-    <div class="group">
-      <div class="form-group text optional user_signature">
-        <label class="control-label text optional" for="user_signature">用户签名</label>
-        <textarea class="form-control text optional" name="user[signature]" id="user_signature"><%= current_user.signature %></textarea>
-      </div>
+  <div class="group">
+    <div class="form-group string optional user_account_name">
+      <label class="control-label string optional" for="user_account_name">用户名</label>
+      <textarea class="form-control string optional" type="text" name="user[account_name]" id="user_account_name"><%= current_user.account_name %></textarea>
     </div>
+  </div>
 
-      <button type="submit" name="commit" value="Submit" disable_with="Submiting..." data-disable-with="Submit" class='btn btn-danger btn-round fileinput-exists'>
-        <i class="fa fa-paper-plane"></i> 修改
-      </button>
-  </form> -->
+  <div class="group">
+    <div class="form-group text optional user_signature">
+      <label class="control-label text optional" for="user_signature">用户签名</label>
+      <textarea class="form-control text optional" name="user[signature]" id="user_signature"><%= current_user.signature %></textarea>
+    </div>
+  </div>
 
-
-
-
-
-
-<hr><br>
-<%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-info pull-right btn-sm' do%>
-  <i class="fa fa-sign-out"></i>  退出登录
-<% end %>
+    <button type="submit" name="commit" value="Submit" disable_with="Submiting..." data-disable-with="Submit" class='btn btn-danger btn-round fileinput-exists'>
+      <i class="fa fa-paper-plane"></i> 修改
+    </button>
+  </div> -->
