@@ -36,9 +36,8 @@
   </button>
 <% end %>
 
-  <!-- <form novalidate="novalidate" class="simple_form edit_user" action="/account/update" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="JV8RKT+4S8mtq7cqZ803JbGh0Qz8Wh1L53+UpAe1mi920IeVp0Ag76XypbPf9Adkq+U+T6jSd5Rb7gCXwo5jtA==">
-    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
 
+<form novalidate="novalidate" class="simple_form edit_user" id="edit_user_<%= current_user.id %>" enctype="multipart/form-data" action="/account/<%= current_user.id %>" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="JTKN0TeRWsqYyaAvjji92dWhnlh1UWGCwdYEstFAlIapLGpvUsfV4FIH/z0UwByp13IzTRPGkbdJJjblRi8zKA==">
       <div class="fileinput-new thumbnail img-circle img-raised">
         <% if current_user.account_avatar.present? %>
         <%= image_tag current_user.account_avatar%>
@@ -73,7 +72,7 @@
       <button type="submit" name="commit" value="Submit" disable_with="Submiting..." data-disable-with="Submit" class='btn btn-danger btn-round fileinput-exists'>
         <i class="fa fa-paper-plane"></i> 修改
       </button>
-  </form> -->
+  </form>
 
 
 
