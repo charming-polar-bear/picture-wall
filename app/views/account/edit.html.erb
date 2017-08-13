@@ -18,8 +18,25 @@
     </div>
   </div>
 
+  <%= simple_form_for current_user, url: account_path(current_user) do |f| %>
+  <div class="group">
+    <%= f.input :account_avatar, as: :file %>
+  </div>
 
-  <form novalidate="novalidate" class="simple_form edit_user" id="edit_user_1" action="/account/1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="JV8RKT+4S8mtq7cqZ803JbGh0Qz8Wh1L53+UpAe1mi920IeVp0Ag76XypbPf9Adkq+U+T6jSd5Rb7gCXwo5jtA==">
+  <div class="group">
+    <%= f.input :account_name %>
+  </div>
+
+  <div class="group">
+    <%= f.input :signature %>
+  </div>
+
+  <button type="submit" name="commit" value="Submit" disable_with="Submiting..." data-disable-with="Submit" class='btn btn-danger btn-round fileinput-exists'>
+    <i class="fa fa-paper-plane"></i> 修改
+  </button>
+<% end %>
+
+  <!-- <form novalidate="novalidate" class="simple_form edit_user" action="/account/update" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><input type="hidden" name="authenticity_token" value="JV8RKT+4S8mtq7cqZ803JbGh0Qz8Wh1L53+UpAe1mi920IeVp0Ag76XypbPf9Adkq+U+T6jSd5Rb7gCXwo5jtA==">
     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
 
       <div class="fileinput-new thumbnail img-circle img-raised">
@@ -34,7 +51,7 @@
         <span class="btn btn-raised btn-round btn-default btn-file">
           <span class="fileinput-new">添加图片</span>
           <span class="fileinput-exists">更改</span>
-          <input type="file" name="..."></span>
+          <input type="file" name="user[account_avatar]"></span>
           <br>
         </div>
       </div>
@@ -56,7 +73,7 @@
       <button type="submit" name="commit" value="Submit" disable_with="Submiting..." data-disable-with="Submit" class='btn btn-danger btn-round fileinput-exists'>
         <i class="fa fa-paper-plane"></i> 修改
       </button>
-  </form>
+  </form> -->
 
 
 
