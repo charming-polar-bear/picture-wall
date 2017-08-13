@@ -1,11 +1,4 @@
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script>
-$('div.masonry-container').masonry({
-  columnWith: 'div.masonry-block',
-  itemSelector: 'div.masonry-block'
-});
-</script>
-
 
 <div class="masonry-container">
 
@@ -21,13 +14,14 @@ $('div.masonry-container').masonry({
 
        <div class="back back-background" style="min-height: 100px;">
         <div class="card-content">
-         <!-- <h5 class="card-title">
-          Share this article...
+         <h5 class="card-title">
+          分享这个作品...
          </h5>
          <p class="card-description">
-          You can share this article with your friends, family or on different networks...
-         </p > -->
+          你可以把这个作品分享给你的朋友,家人,小伙伴们...
+         </p >
          <div class="footer text-center">
+           <%= social_share_button_tag(@post) %>
          </div>
         </div>
        </div>

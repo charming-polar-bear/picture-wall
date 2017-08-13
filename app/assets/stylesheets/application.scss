@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require material_icons
+ *= require social-share-button
  *= require_tree .
  *= require_self
  */
@@ -19,6 +20,8 @@
  @import "bootstrap";
  @import "material-kit";
  @import "font-awesome";
+ @import "social-share-button";
+
 
 
  .fileinput .thumbnail {
