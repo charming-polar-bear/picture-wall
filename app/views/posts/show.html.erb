@@ -28,6 +28,7 @@
   </div>
 
 
+  <%= social_share_button_tag(@post.description, :allow_sites => %w(wechat weibo douban qq), :image => @post.picture.thumb.url , desc: @post.description) %>
 
   <%= render 'delete_button', post: @post %>
 
