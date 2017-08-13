@@ -32,4 +32,6 @@ class Post < ApplicationRecord
     likers.delete(user)
   end
 
+  scope :recent, -> { order('created_at DESC') }
+
 end

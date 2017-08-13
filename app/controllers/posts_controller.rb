@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :get_post, only: [:show, :destroy, :current_user_like, :current_user_dislike]
 
   def index
-    @posts = Post.includes(:user).all
+    @posts = Post.includes(:user).all.recent
   end
 
   def new
