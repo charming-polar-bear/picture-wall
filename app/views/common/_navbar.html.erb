@@ -20,7 +20,7 @@
                  </li>
                 <li>
                   <%= link_to user_path(current_user) do %>
-                    <img src= "<%= render_user_avatar(current_user, 30) %>">
+                    <%= image_tag render_user_avatar(current_user, 30), style:"width: 30px;" %>
                     <%= current_user.display_name %>
                   <% end %>
                 </li>
