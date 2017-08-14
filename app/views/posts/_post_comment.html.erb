@@ -1,11 +1,15 @@
 <div class="media">
     <%= link_to comment.user, class: 'pull-left' do %>
     <div class="avatar">
-      <%= image_tag comment.user.account_avatar, class: 'media-object' %>
+      <%#= image_tag comment.user.account_avatar, class: 'media-object' %>
+      <%= image_tag render_user_avatar(current_user, 70),  class: 'media-object', style: 'width:70px; height:70px;'%>
     </div>
     <% end %>
 	  <div class="media-body">
-			<h4 class="media-heading"><%= comment.user.email %> <small>&middot; <%= time_ago_in_words(comment.created_at) %></small></h4>
+			<h4 class="media-heading">
+        <%= current_user.display_name %>
+        <small>&middot; <%= time_ago_in_words(comment.created_at) %></small>
+      </h4>
 			<p><%= comment.content %></p>
 	  </div>
     <div class="media-footer pull-right" style="margin-right: 20px">

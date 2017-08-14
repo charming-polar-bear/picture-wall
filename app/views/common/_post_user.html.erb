@@ -15,8 +15,10 @@
 
           <%= link_to user_path(post_user) do %>
           <div>
-            <%= image_tag post_user.account_avatar, class: 'avatar img-raised' %>
-            <span> <%= post_user.email %> </span>
+            <%= image_tag render_user_avatar(current_user, 30), style:"width: 30px;" %>
+            <strong>
+              <%= current_user.display_name %>
+            </strong>
           </div>
           <% end %>
             <!-- <a href="#pablo">

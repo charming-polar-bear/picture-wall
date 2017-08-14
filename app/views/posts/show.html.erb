@@ -1,6 +1,5 @@
   <div class="card card-blog card-atv">
   	<div class="card-image">
-  		<!-- <a href="#pablo"> -->
   			<div class="atvImg">
           <%= image_tag @post.picture %>
   			</div>
@@ -12,8 +11,8 @@
   		<div class="footer">
   			<div class="author">
           <%= link_to @post.user do %>
-              <%= image_tag @post.user.account_avatar, class: 'avatar' %>
-              <span><%= @post.user.account_name %></span>
+              <%= image_tag render_user_avatar(current_user, 70),  class: 'avatar', style: 'width:70px; height:70px;'%>
+              <%= current_user.display_name %>
           <% end %>
   			</div>
 

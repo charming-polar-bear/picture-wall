@@ -1,7 +1,8 @@
 <div class="media media-post">
   <% if current_user.present? %>
     <div class="pull-left author">
-      <%= image_tag current_user.account_avatar, class:'avatar', alt:"#{current_user.account_name}" %>
+      <%= image_tag render_user_avatar(current_user, 30), class:'avatar'%>
+      <%#= image_tag current_user.account_avatar, class:'avatar', alt:"#{current_user.account_name}" %>
     </div>
   <% end %>
 
