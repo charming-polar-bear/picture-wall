@@ -18,7 +18,12 @@
                     <i class="fa fa-camera" aria-hidden="true"></i>
                    <% end %>
                  </li>
-                <li><%= link_to current_user.email, user_path(current_user) %></li>
+                <li>
+                  <%= link_to user_path(current_user) do %>
+                    <%= image_tag render_user_avatar(current_user, 30), style:"width: 30px;" %>
+                    <%= current_user.display_name %>
+                  <% end %>
+                </li>
               <% end %>
             </ul>
         </div>

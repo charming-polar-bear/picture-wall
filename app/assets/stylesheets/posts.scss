@@ -11,12 +11,14 @@
   min-width: 500px;
 }
 
-.form-group{
-  label.control-label{
-    padding: 15px 50px;
-    background: #999999;
-    box-shadow: 0 2px 4px 0 rgba(175,175,175,0.50);
-    border-radius: 100px;
-    color: #fff !important;
+.fileinput {
+  .form-group {
+    label.control-label{
+      padding: 15px 50px;
+      background: #999999;
+      box-shadow: 0 2px 4px 0 rgba(175,175,175,0.50);
+      border-radius: 100px;
+      color: #fff !important;
+    }
   }
 }
