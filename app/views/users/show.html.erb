@@ -41,7 +41,8 @@
   				<div class="col-md-8 col-md-offset-2">
   					<div class="card card-profile">
   						<div class="card-avatar">
-                  <%= image_tag @user.account_avatar %>
+                  <%#= image_tag @user.account_avatar %>
+                  <img src= "<%= render_user_avatar(current_user, 60) %>">
   						</div>
 
 

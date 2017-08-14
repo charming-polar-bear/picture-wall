@@ -51,6 +51,16 @@
 
                 <div class="input-group">
                   <span class="input-group-addon">
+                    <i class="material-icons">account_box</i>
+                  </span>
+                  <div class="form-group label-floating">
+                    <label class="control-label">昵称</label>
+                    <%= f.text_field :account_name, type: :account_name, required: true, autofocus: true, class: "form-control" %>
+                  </div>
+                </div>
+
+                <div class="input-group">
+                  <span class="input-group-addon">
                     <i class="material-icons">lock_outline</i>
                   </span>
                   <div class="form-group label-floating">

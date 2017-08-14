@@ -64,10 +64,6 @@
                   </div>
                 </div>
 
-                <div class="input-group">
-                  <%= f.input :remember_me, label: false, inline_label: "记住我", as: :boolean if devise_mapping.rememberable? %>
-                </div>
-
               </div>
               <div class="footer text-center">
                 <%= f.submit "登  录", data: { disable_with: "登录中..." }, class: "btn btn-round btn-info"%>
