@@ -25,4 +25,6 @@
 //= require jquery.min
 //= require moment.min
 //= nouislider.min
+//= require social-share-button
+//= require social-share-button/wechat
 //= require_tree .
