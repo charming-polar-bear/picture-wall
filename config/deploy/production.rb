@@ -63,4 +63,4 @@
 
 server "ubuntu-aliyun01", user: "apps", roles: %w{app db web}, my_property:
 :my_value
-set :branch, 'develop'
+set :branch, 'master'
