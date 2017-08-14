@@ -11,18 +11,20 @@
      <div class="rotating-card-container">
       <div class="card-image">
        <div class="front">
-            <%= image_tag p.picture.thumb, style: "min-height: 100px;" %>
+            <%= image_tag p.picture.thumb, style: "min-height: 160px;" %>
        </div>
 
-       <div class="back back-background" style="min-height: 100px;">
+       <div class="back back-background" style="min-height: 160px;">
         <div class="card-content">
-         <!-- <h5 class="card-title">
-          Share this article...
+         <h5 class="card-title">
          </h5>
          <p class="card-description">
-          You can share this article with your friends, family or on different networks...
-         </p > -->
+           宁波市质监局 <br>
+            <font size='4'> “有质青年” </font><br>
+             志愿者活动
+         </p >
          <div class="footer text-center">
+           <%= social_share_button_tag('质监局活动', :allow_sites => %w(wechat weibo), :image => p.picture.url , desc: '质监局的活动') %>
          </div>
         </div>
        </div>

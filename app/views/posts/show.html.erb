@@ -27,9 +27,12 @@
   	</div>
   </div>
 
-
-  <%= social_share_button_tag('质监局活动', :allow_sites => %w(qq douban wechat weibo), :image => @post.picture.url , desc: '质监局的活动') %>
-  <%= render 'delete_button', post: @post %>
+  <div>
+    <%= render 'delete_button', post: @post %>
+    <div class="pull-right">
+      <%= social_share_button_tag('质监局活动', :allow_sites => %w(qq douban wechat weibo), :image => @post.picture.url , desc: '质监局的活动') %>
+    </div>
+  </div>
 
   <hr>
 

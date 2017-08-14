@@ -22,3 +22,13 @@
     }
   }
 }
+
+$size: 40px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
