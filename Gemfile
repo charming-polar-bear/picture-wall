@@ -46,6 +46,7 @@ gem 'faker'
 
 gem 'figaro'
 
+gem 'social-share-button'
 # gem 'cancancan'
 
 # Use Capistrano for deployment
