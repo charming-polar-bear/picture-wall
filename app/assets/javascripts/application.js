@@ -20,7 +20,7 @@
 //= require bootstrap/alert
 //= require atv-img-animation
 
-
+//= require moment.min
 //= require material-kit
 //= require material.min
 //= require bootstrap-datetimepicker
@@ -28,7 +28,7 @@
 //= require bootstrap.min
 //= require jasny-bootstrap.min
 
-//= require moment.min
+
 //= nouislider.min
 //= require social-share-button
 //= require social-share-button/wechat

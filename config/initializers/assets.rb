@@ -9,3 +9,20 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+
+
+Rails.application.config.assets.precompile += %w( atv-img-animation.js )
+Rails.application.config.assets.precompile += %w( bootstrap-selectpicker.js )
+Rails.application.config.assets.precompile += %w( bootstrap-datetimepicker.js )
+
+
+Rails.application.config.assets.precompile += %w( bootstrap-tagsinput.js )
+Rails.application.config.assets.precompile += %w( jasny-bootstrap.min.js )
+Rails.application.config.assets.precompile += %w( jquery.flexisel.js )
+
+Rails.application.config.assets.precompile += %w( material-kit.js )
+Rails.application.config.assets.precompile += %w( material-kit.min.js )
+Rails.application.config.assets.precompile += %w( material.min.js )
+
+Rails.application.config.assets.precompile += %w( moment.min.js )
+Rails.application.config.assets.precompile += %w( nouislider.min.js )
