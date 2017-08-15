@@ -11,8 +11,8 @@
   		<div class="footer">
   			<div class="author">
           <%= link_to @post.user do %>
-              <%= image_tag render_user_avatar(current_user, 70),  class: 'avatar', style: 'width:70px; height:70px;'%>
-              <%= current_user.display_name %>
+              <%= image_tag render_user_avatar(@post.user, 70),  class: 'avatar', style: 'width:70px; height:70px;'%>
+              <%= @post.user.display_name %>
           <% end %>
   			</div>
 

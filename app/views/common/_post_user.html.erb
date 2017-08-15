@@ -15,9 +15,9 @@
 
           <%= link_to user_path(post_user) do %>
           <div>
-            <%= image_tag render_user_avatar(current_user, 30), style:"width: 30px;" %>
+            <%= image_tag render_user_avatar(post_user, 30), style:"width: 30px;" %>
             <strong>
-              <%= current_user.display_name %>
+              <%= post_user.display_name %>
             </strong>
           </div>
           <% end %>
