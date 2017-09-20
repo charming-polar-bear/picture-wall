@@ -70,6 +70,7 @@ group :development do
   gem 'capistrano-figaro-yml', '~> 1.0.2'
   gem "capistrano-rvm"
   gem "capistrano-rails"
+  gem 'capistrano-passenger'
 end
 
 group :production do
