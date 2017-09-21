@@ -39,8 +39,18 @@
 
    .navbar-center {
      float: left;
-     margin-top: 38px;
-     margin-left: 20px;
-     font-size: large;
+     position: absolute;
+     left: 50%;
+     bottom: 22px;
+     font-size: 50px;
+   }
+ }
+
+
+ @media (min-width: 768px) {
+   .navbar{
+     .navbar-center {
+        font-size: 50px;
+     }
    }
  }
