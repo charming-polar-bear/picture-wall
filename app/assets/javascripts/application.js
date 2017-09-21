@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require jquery.min
 //= require jquery.flexisel
+//= require masonry.pkgd.min.js
+//= require imagesloaded.pkgd.min.js
 
 //= require bootstrap/alert
 //= require atv-img-animation
