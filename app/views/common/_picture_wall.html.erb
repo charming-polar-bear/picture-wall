@@ -45,8 +45,13 @@
 </div>
 
 <script>
-$('div.masonry-container').masonry({
+var $grid = $('div.masonry-container').masonry({
   columnWith: 'div.masonry-block',
   itemSelector: 'div.masonry-block'
+});
+
+// layout Masonry after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry('layout');
 });
 </script>
