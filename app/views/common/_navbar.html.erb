@@ -1,15 +1,16 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href="/" class="navbar-brand" style="max-width:50px;"> <%= image_tag 'youth.png', style: 'max-width:50px;' %></a>
+            <a href="/" class="navbar-brand" style="max-width:50px;"> <%= image_tag 'youth.png', style: 'max-width:50px;' %>
+            </a>
         </div>
+        <!--  -->
+        <div class="navbar-center">
+           弘扬雷锋精神，参与志愿行动，服务质量安全
+        </div>
+        <!--  -->
         <div class="collapse navbar-collapse">
 
-          <!--  -->
-          <div class="navbar-center">
-          弘扬雷锋精神，参与志愿行动，服务质量安全
-          </div>
-          <!--  -->
             <ul class="nav navbar-nav navbar-right">
               <% unless current_user %>
                   <li>
