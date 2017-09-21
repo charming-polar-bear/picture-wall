@@ -16,7 +16,6 @@
 //= require jquery.min
 //= require jquery.flexisel
 
-//= require turbolinks
 //= require bootstrap/alert
 //= require atv-img-animation
 
