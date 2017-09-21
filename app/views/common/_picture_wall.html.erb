@@ -1,7 +1,3 @@
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
-
-
 <div class="masonry-container">
 
 <% @posts.each do |p|  %>
@@ -44,7 +40,18 @@
 
 </div>
 
-<script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    var $container = $('div.masonry-container');
+    $container.imagesLoaded( function(){
+      $container.masonry({
+        itemSelector : 'div.masonry-block'
+      });
+    });
+  });
+</script>
+<!-- <script>
 var $grid = $('div.masonry-container').masonry({
   columnWith: 'div.masonry-block',
   itemSelector: 'div.masonry-block'
@@ -54,4 +61,4 @@ var $grid = $('div.masonry-container').masonry({
 $grid.imagesLoaded().progress( function() {
   $grid.masonry('layout');
 });
-</script>
+</script> -->
